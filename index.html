@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8" />
+<title>新闻图片轮播小插件</title>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="stylesheet" type="text/css" href="css/zm-rotation.css"/>
+</head>
+<body>
+<!--ul标签的class属性必需，图片alt属性值即标题文字-->
+<div class="zm-rotation">
+    <ul class="rotation-list">
+        <li>
+			<a href="javascript:;">
+				<img src="uploads/1.jpg" alt="纸飞机飞呀飞 晚霞真美">
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<img src="uploads/4.jpeg" alt="摘下你的面具 我们交朋友吧">
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<img src="uploads/2.jpg" alt='幸运只是努力的另一个代名词'>
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<img src="uploads/3.jpg" alt="我喜欢夜晚的寂静 一个人真好">
+			</a>
+		</li>
+		<li>
+			<a href="javascript:;">
+				<img src="uploads/5.jpg" alt="找到生活中的理想吧">
+			</a>
+		</li>
+	</ul>
+	<div class="rotation-title"></div>
+	<a href="javascript:;" class="rotation-text"><!--这里是新闻描述--></a>
+	<div class="rotation-focus"></div>
+</div>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/jquery.zmrotation.js"></script>
+<script type="text/javascript">
+$(".zm-rotation").zmRotation({height: 220});
+</script>
+</body>
+</html>
