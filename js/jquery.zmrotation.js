@@ -40,12 +40,9 @@
                     if (currIndex >= liCount) {
                         currIndex = 0;
                     }
-                    $li.eq(currIndex).fadeIn(300);
-                    $li.not($li.eq(currIndex)).fadeOut(300);
-                    $span.eq(currIndex).addClass('hover');
-                    $span.not($span.eq(currIndex)).removeClass('hover');
-                    $text.text(($li.eq(currIndex).find('img').attr('alt')));
-                    $text.attr('href', $li.eq(currIndex).find('a').attr('href'));
+                    $li.eq(currIndex).fadeIn(300).not($li.eq(currIndex)).fadeOut(300);
+                    $span.eq(currIndex).addClass('hover').end().not($span.eq(currIndex)).removeClass('hover');
+                    $text.text(($li.eq(currIndex).find('img').attr('alt'))).attr('href', $li.eq(currIndex).find('a').attr('href'));
                 }
                 $span.bind('mouseover', function () {
                     var mThis = $(this);
@@ -56,11 +53,11 @@
                     $focus.children('span').not(mThis).removeClass('hover');
                     currLi.fadeIn(300);
                     $li.not(currLi).fadeOut(300);
-                    $text.text($li.eq(i).find('img').attr('alt'));
+                    $text.text($li.eq(i).find('img').attr('alt')).attr('href', $li.eq(currIndex).find('a').attr('href'));
                 });
                 var isLoop = setInterval(loop, o.during);
                 $this.hover(function () {
-                    if (isLoop) clearInterval(isLoop);
+                    (isLoop) && clearInterval(isLoop);
                 }, function () {
                     if(o.auto) isLoop = setInterval(loop, o.during);
                 });
